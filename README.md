@@ -16,7 +16,7 @@ Due to GitHub's file limit, full datasets for the yellow taxi cab trips are host
 - [Download full Excel files](https://www.dropbox.com/scl/fo/mrss9gpi3mgna98h35mvd/AEDUoPpmHZoa_zKQ5yzL4Sk?rlkey=ao9oyapxx583ovkp0v6xrz007&st=byxsi2tb&dl=0)
 
 These include:
-- NYC Taxi Trip Data: Raw trip-level records used for spatial joins and movement analysis
+- NYC Taxi Trip Data: Raw trip-level records used for spatial joins and movement analysis for each month
 - NYPD Crime Complaint Data: Incident-level reports used for temporal and geographic aggregation
 
 All files are read into R using readxl::read_excel() or data.table::fread() depending on format and size. 
