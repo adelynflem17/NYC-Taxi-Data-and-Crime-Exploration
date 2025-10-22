@@ -103,7 +103,7 @@ queens_map <- map_taxi_zones_by_borough(
   clip = TRUE,
   label_areas = c("Astoria", "Steinway", "Jackson Heights", "Forest Hills", "Long Island City & Hunters Point")
 )
-
+plot(queens_map)
 
 manhattan_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
@@ -113,7 +113,7 @@ manhattan_map <- map_taxi_zones_by_borough(
   clip = TRUE,
   label_areas = c("East Harlem North", "East Harlem South", "Two Bridges/Seward Park", "West Chelsea/Hudson Yards")
 )
-
+plot(manhattan_map)
 
 StatenIsland_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
@@ -123,7 +123,7 @@ StatenIsland_map <- map_taxi_zones_by_borough(
   clip = TRUE,
   label_areas = c("Bloomfield/Emerson Hill", "Stapleton")
 )
-
+plot(StatenIsland_map)
 
 Brooklyn_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
@@ -133,7 +133,7 @@ Brooklyn_map <- map_taxi_zones_by_borough(
   clip = TRUE,
   label_areas = c("Brooklyn Heights", "Greenpoint", "Park Slope", "Williamsburg (North Side)", "Williamsburg (South Side)")
 )
-
+plot(Brooklyn_map)
 
 Bronx_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
@@ -143,5 +143,4 @@ Bronx_map <- map_taxi_zones_by_borough(
   clip = TRUE,
   label_areas = c("East Concourse/Concourse Village", "Mott Haven/Port Morris", "Spuyten Duyvil/Kingsbridge")
 )
-
-plot(queens_map)
+plot(Bronx_map)
