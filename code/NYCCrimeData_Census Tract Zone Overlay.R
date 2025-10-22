@@ -6,36 +6,38 @@ map_taxi_zones_by_borough <- function(zone_path, borough_path, tract_path, borou
   library(ggplot2)
   library(ggrepel)
   
-  # Read and transform data
+  # Read shapefiles and transform data to WGS84
   zones <- st_read(zone_path) %>% st_transform(crs = 4326)
   boroughs <- st_read(borough_path) %>% st_transform(crs = 4326)
   tracts <- st_read(tract_path) %>% st_transform(crs = 4326)
   
-  # Validate geometries
+  # Ensure geometries are valid
   zones <- st_make_valid(zones)
   tracts <- st_make_valid(tracts)
   
-  # Filter for selected borough
+  # Filter data for selected borough
   selected_borough <- boroughs %>% filter(BoroName == borough_name)
   zone_borough <- zones %>% filter(borough == borough_name)
+
+  # Handle inconsistent column naming in census tract shapefile
   tract_col <- if ("boroname" %in% colnames(tracts)) "boroname" else "BoroName"
   tracts_borough <- tracts %>% filter(.data[[tract_col]] == borough_name)
   
-  # Ensure CRS consistency before clipping
+  # Align CRS before spatial operations
   selected_borough <- st_transform(selected_borough, st_crs(zone_borough))
   
-  # Optional: spatial clip
+  # Optionally clip zones and tracts to borough boundary
   if (clip) {
     zone_borough <- st_intersection(zone_borough, selected_borough)
     tracts_borough <- st_intersection(tracts_borough, selected_borough)
   }
   
-  # Fail-safe
+  # Fail-safe: stop if no tracts found
   if (!exists("tracts_borough") || nrow(tracts_borough) == 0) {
     stop("❌ tracts_borough is missing or empty. Check column names and borough_name.")
   }
   
-  # Prepare highlighted zones and labels
+  # Prepare external labels for highlighted zones
   if (!is.null(label_areas)) {
     highlighted_zones <- zone_borough %>% filter(zone %in% label_areas)
     highlighted_zones$centroid <- st_point_on_surface(highlighted_zones$geometry)
@@ -43,20 +45,18 @@ map_taxi_zones_by_borough <- function(zone_path, borough_path, tract_path, borou
     highlighted_zones$lon <- coords[,1]
     highlighted_zones$lat <- coords[,2]
     
-    # Get bounding box of the selected borough
+    # Get the bounding box to position labels outside map
     bbox <- st_bbox(selected_borough)
-    
-    # Push labels just outside the right edge of the map
     highlighted_zones$label_x <- bbox["xmax"] + 0.01
     highlighted_zones$label_y <- highlighted_zones$lat
     
-    # Optional: stagger vertically to avoid overlap
+    # Optional: stagger labels vertically to reduce overlap
     highlighted_zones <- highlighted_zones %>%
       arrange(desc(lat)) %>%
       mutate(label_y = label_y + seq(-0.01, 0.01, length.out = n()))
   }
   
-  # Plot
+  # Build layered ggplot
   p <- ggplot() +
     # Census tracts first so they appear beneath everything
     geom_sf(data = tracts_borough, fill = NA, color = "gray60", size = 0.3) +
@@ -72,12 +72,11 @@ map_taxi_zones_by_borough <- function(zone_path, borough_path, tract_path, borou
     
     # Borough outline
     geom_sf(data = selected_borough, fill = NA, color = "black", size = 1) +
-    
     theme_void() +
     coord_sf(xlim = c(bbox["xmin"], bbox["xmax"] + 0.05), clip = "off") +
     theme(plot.margin = margin(1, 1, 1, 1, "cm"))
   
-  # External labels and arrows
+  # Add external labels and arrows
   if (!is.null(label_areas)) {
     p <- p +
       geom_segment(data = highlighted_zones,
@@ -93,8 +92,9 @@ map_taxi_zones_by_borough <- function(zone_path, borough_path, tract_path, borou
 }
 
 
+# Each section below generates a map for a specific borough with custom zone labels
 
-
+# Queens
 queens_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
   borough_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/nybb_25b/nybb_25b/nybb.shp",
@@ -105,6 +105,7 @@ queens_map <- map_taxi_zones_by_borough(
 )
 plot(queens_map)
 
+# Manhattan
 manhattan_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
   borough_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/nybb_25b/nybb_25b/nybb.shp",
@@ -115,6 +116,7 @@ manhattan_map <- map_taxi_zones_by_borough(
 )
 plot(manhattan_map)
 
+# Staten Island
 StatenIsland_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
   borough_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/nybb_25b/nybb_25b/nybb.shp",
@@ -125,6 +127,7 @@ StatenIsland_map <- map_taxi_zones_by_borough(
 )
 plot(StatenIsland_map)
 
+# Brooklyn
 Brooklyn_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
   borough_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/nybb_25b/nybb_25b/nybb.shp",
@@ -135,6 +138,7 @@ Brooklyn_map <- map_taxi_zones_by_borough(
 )
 plot(Brooklyn_map)
 
+# The Bronx
 Bronx_map <- map_taxi_zones_by_borough(
   zone_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/taxi_zones/taxi_zones.shp",
   borough_path = "C:/Users/Adelyn/Desktop/MS_Thesis_Final/nybb_25b/nybb_25b/nybb.shp",
@@ -144,3 +148,4 @@ Bronx_map <- map_taxi_zones_by_borough(
   label_areas = c("East Concourse/Concourse Village", "Mott Haven/Port Morris", "Spuyten Duyvil/Kingsbridge")
 )
 plot(Bronx_map)
+
