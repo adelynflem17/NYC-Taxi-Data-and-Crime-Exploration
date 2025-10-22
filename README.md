@@ -33,7 +33,7 @@ Each script is commented for clarity and designed to be reusable across boroughs
 - NYCCrimeData_Census Tract Zone Overlay(): Generates spatial overlays of taxi zones and census tracts
 - NYCCrimeData_Combined Visual(): Builds weekday-hour heatmaps for selected offenses
 - NYCCrimeData_Correlation Plots(): Generates scatter plots of crime counts vs. movement/population metrics for a given borough and month
-- NYCCrimeData_Combining Plots(): 
+- NYCCrimeData_Combining Plots(): Computes zone-level net movement for each month and visualizes spatial trends using color-coded maps and ranked labels
 - NYCCrimeData_Data Processing(): 
 
 To run the analysis, ensure the required packages are installed and update file paths as needed. All visual outputs are saved as PDFs for easy sharing and review. 
