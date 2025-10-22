@@ -32,7 +32,7 @@ This repository includes modular R scripts for spatial analysis, data merging, a
 Each script is commented for clarity and designed to be reusable across boroughs and crime types. Key functions include:
 - NYCCrimeData_Census Tract Zone Overlay(): Generates spatial overlays of taxi zones and census tracts
 - NYCCrimeData_Combined Visual(): Builds weekday-hour heatmaps for selected offenses
-- NYCCrimeData_Correlation Plots(): 
+- NYCCrimeData_Correlation Plots(): Generates scatter plots of crime counts vs. movement/population metrics for a given borough and month
 - NYCCrimeData_Combining Plots(): 
 - NYCCrimeData_Data Processing(): 
 
