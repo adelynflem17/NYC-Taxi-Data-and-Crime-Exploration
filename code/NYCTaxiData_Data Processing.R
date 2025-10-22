@@ -257,11 +257,11 @@ save(Raw_December_Taxi, file = "December.csv")
 # January
 January_TaxiCab <- get(load("January.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 January_TaxiCab <- subset(January_TaxiCab, January_TaxiCab$PULocationID != 264) 
 January_TaxiCab <- subset(January_TaxiCab, January_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 January_TaxiCab <- subset(January_TaxiCab, January_TaxiCab$DOLocationID != 264) 
 January_TaxiCab <- subset(January_TaxiCab, January_TaxiCab$DOLocationID != 265)
 
@@ -269,11 +269,11 @@ January_TaxiCab <- subset(January_TaxiCab, January_TaxiCab$DOLocationID != 265)
 # February
 February_TaxiCab <- get(load("February.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 February_TaxiCab <- subset(February_TaxiCab, February_TaxiCab$PULocationID != 264) 
 February_TaxiCab <- subset(February_TaxiCab, February_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 February_TaxiCab <- subset(February_TaxiCab, February_TaxiCab$DOLocationID != 264) 
 February_TaxiCab <- subset(February_TaxiCab, February_TaxiCab$DOLocationID != 265)
 
@@ -281,11 +281,11 @@ February_TaxiCab <- subset(February_TaxiCab, February_TaxiCab$DOLocationID != 26
 # March
 March_TaxiCab <- get(load("March.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 March_TaxiCab <- subset(March_TaxiCab, March_TaxiCab$PULocationID != 264) 
 March_TaxiCab <- subset(March_TaxiCab, March_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 March_TaxiCab <- subset(March_TaxiCab, March_TaxiCab$DOLocationID != 264) 
 March_TaxiCab <- subset(March_TaxiCab, March_TaxiCab$DOLocationID != 265)
 
@@ -293,11 +293,11 @@ March_TaxiCab <- subset(March_TaxiCab, March_TaxiCab$DOLocationID != 265)
 # April
 April_TaxiCab <- get(load("April.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 April_TaxiCab <- subset(April_TaxiCab, April_TaxiCab$PULocationID != 264) 
 April_TaxiCab <- subset(April_TaxiCab, April_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 April_TaxiCab <- subset(April_TaxiCab, April_TaxiCab$DOLocationID != 264) 
 April_TaxiCab <- subset(April_TaxiCab, April_TaxiCab$DOLocationID != 265)
 
@@ -305,11 +305,11 @@ April_TaxiCab <- subset(April_TaxiCab, April_TaxiCab$DOLocationID != 265)
 # May
 May_TaxiCab <- get(load("May.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 May_TaxiCab <- subset(May_TaxiCab, May_TaxiCab$PULocationID != 264) 
 May_TaxiCab <- subset(May_TaxiCab, May_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 May_TaxiCab <- subset(May_TaxiCab, May_TaxiCab$DOLocationID != 264) 
 May_TaxiCab <- subset(May_TaxiCab, May_TaxiCab$DOLocationID != 265)
 
@@ -317,11 +317,11 @@ May_TaxiCab <- subset(May_TaxiCab, May_TaxiCab$DOLocationID != 265)
 # June
 June_TaxiCab <- get(load("June.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 June_TaxiCab <- subset(June_TaxiCab, June_TaxiCab$PULocationID != 264) 
 June_TaxiCab <- subset(June_TaxiCab, June_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 June_TaxiCab <- subset(June_TaxiCab, June_TaxiCab$DOLocationID != 264) 
 June_TaxiCab <- subset(June_TaxiCab, June_TaxiCab$DOLocationID != 265)
 
@@ -329,11 +329,11 @@ June_TaxiCab <- subset(June_TaxiCab, June_TaxiCab$DOLocationID != 265)
 # July
 July_TaxiCab <- get(load("July.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 July_TaxiCab <- subset(July_TaxiCab, July_TaxiCab$PULocationID != 264) 
 July_TaxiCab <- subset(July_TaxiCab, July_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 July_TaxiCab <- subset(July_TaxiCab, July_TaxiCab$DOLocationID != 264) 
 July_TaxiCab <- subset(July_TaxiCab, July_TaxiCab$DOLocationID != 265)
 
@@ -341,11 +341,11 @@ July_TaxiCab <- subset(July_TaxiCab, July_TaxiCab$DOLocationID != 265)
 # August
 August_TaxiCab <- get(load("August.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 August_TaxiCab <- subset(August_TaxiCab, August_TaxiCab$PULocationID != 264) 
 August_TaxiCab <- subset(August_TaxiCab, August_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 August_TaxiCab <- subset(August_TaxiCab, August_TaxiCab$DOLocationID != 264) 
 August_TaxiCab <- subset(August_TaxiCab, August_TaxiCab$DOLocationID != 265)
 
@@ -353,11 +353,11 @@ August_TaxiCab <- subset(August_TaxiCab, August_TaxiCab$DOLocationID != 265)
 # September
 September_TaxiCab <- get(load("September.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 September_TaxiCab <- subset(September_TaxiCab, September_TaxiCab$PULocationID != 264) 
 September_TaxiCab <- subset(September_TaxiCab, September_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 September_TaxiCab <- subset(September_TaxiCab, September_TaxiCab$DOLocationID != 264) 
 September_TaxiCab <- subset(September_TaxiCab, September_TaxiCab$DOLocationID != 265)
 
@@ -365,11 +365,11 @@ September_TaxiCab <- subset(September_TaxiCab, September_TaxiCab$DOLocationID !=
 # October
 October_TaxiCab <- get(load("October.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 October_TaxiCab <- subset(October_TaxiCab, October_TaxiCab$PULocationID != 264) 
 October_TaxiCab <- subset(October_TaxiCab, October_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 October_TaxiCab <- subset(October_TaxiCab, October_TaxiCab$DOLocationID != 264) 
 October_TaxiCab <- subset(October_TaxiCab, October_TaxiCab$DOLocationID != 265)
 
@@ -377,11 +377,11 @@ October_TaxiCab <- subset(October_TaxiCab, October_TaxiCab$DOLocationID != 265)
 # November
 November_TaxiCab <- get(load("November.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 November_TaxiCab <- subset(November_TaxiCab, November_TaxiCab$PULocationID != 264) 
 November_TaxiCab <- subset(November_TaxiCab, November_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 November_TaxiCab <- subset(November_TaxiCab, November_TaxiCab$DOLocationID != 264) 
 November_TaxiCab <- subset(November_TaxiCab, November_TaxiCab$DOLocationID != 265)
 
@@ -389,17 +389,16 @@ November_TaxiCab <- subset(November_TaxiCab, November_TaxiCab$DOLocationID != 26
 # December
 December_TaxiCab <- get(load("December.csv"))
 
-# Eliminate PU Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Pick-up Locations in 264 and 265 as those are unknown Boroughs
 December_TaxiCab <- subset(December_TaxiCab, December_TaxiCab$PULocationID != 264) 
 December_TaxiCab <- subset(December_TaxiCab, December_TaxiCab$PULocationID != 265)
 
-# Eliminate DO Locations in 264 and 265 as those are unknown Boroughs
+# Eliminate Drop-off Locations in 264 and 265 as those are unknown Boroughs
 December_TaxiCab <- subset(December_TaxiCab, December_TaxiCab$DOLocationID != 264) 
 December_TaxiCab <- subset(December_TaxiCab, December_TaxiCab$DOLocationID != 265)
 
 
-
-# Save the Final Cleaned Data to be read into the 
+# Save the Final Cleaned Data to be read into the NYCTaxiData_Combining Plots Code
 save(January_TaxiCab, file = "January_Final.csv")
 save(February_TaxiCab, file = "February_Final.csv")
 save(March_TaxiCab, file = "March_Final.csv")
@@ -412,6 +411,7 @@ save(September_TaxiCab, file = "September_Final.csv")
 save(October_TaxiCab, file = "October_Final.csv")
 save(November_TaxiCab, file = "November_Final.csv")
 save(December_TaxiCab, file = "December_Final.csv")
+
 
 
 
