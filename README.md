@@ -22,4 +22,19 @@ These include:
 All files are read into R using readxl::read_excel() or data.table::fread() depending on format and size. 
 
 ## 📁 R Code
+This repository includes modular R scripts for spatial analysis, data merging, and visualization. The code is organized to support reproducible workflows for:
+- Mapping taxi zones and census tracts by borough
+- Calculating monthly net movement (in/out) by zone
+- Merging crime, movement, and population data
+- Generating heatmaps of crime occurrences by weekday and hour
+- Creating annotated multi-panel plots for borough-level and monthly trends
+
+Each script is commented for clarity and designed to be reusable across boroughs and crime types. Key functions include:
+- NYCCrimeData_Census Tract Zone Overlay(): Generates spatial overlays of taxi zones and census tracts
+- NYCCrimeData_Combined Visual():
+- NYCCrimeData_Correlation Plots(): 
+- NYCCrimeData_Combining Plots(): 
+- NYCCrimeData_Data Processing(): 
+
+To run the analysis, ensure the required packages are installed and update file paths as needed. All visual outputs are saved as PDFs for easy sharing and review. 
 
