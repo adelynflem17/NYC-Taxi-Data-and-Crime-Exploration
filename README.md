@@ -1,5 +1,5 @@
 # NYC-Taxi-Data-and-Crime-Exploration
-R code for analyzing NYC taxi trip data alongside crime statistics to uncover mobility-crime relationships. 
+This project explores the relationship between urban mobility and public safety in New York City by analyzing taxi trip data alongside crime statistics. It aims to uncover spatial and temporal patterns in movement and crime, and visualize these trends to support policy, planning, and academic research. 
 
 ## 📁 Data Access and Structure
 This repository supports the MS Report NYC Taxi Data and Crime Exploration, which focuses on analyzing spatial and temporal relationships between urban mobility and public safety. Due to file size constraints, data access is split between GitHub and Dropbox. 
@@ -34,7 +34,13 @@ Each script is commented for clarity and designed to be reusable across boroughs
 - NYCCrimeData_Combined Visual(): Builds weekday-hour heatmaps for selected offenses
 - NYCCrimeData_Correlation Plots(): Generates scatter plots of crime counts vs. movement/population metrics for a given borough and month
 - NYCCrimeData_Combining Plots(): Computes zone-level net movement for each month and visualizes spatial trends using color-coded maps and ranked labels
-- NYCCrimeData_Data Processing(): 
+- NYCCrimeData_Data Processing(): Cleaning up the NYC yellow taxi-cab data
 
 To run the analysis, ensure the required packages are installed and update file paths as needed. All visual outputs are saved as PDFs for easy sharing and review. 
+
+## 🧪 Reproducibility Notes
+Assumptions and preprocessing steps:
+- All dates are assumed to be in 2018
+- Taxi zones and census tracts are spatially joined using WGS84
+- Movement is normalized in thousands
 
