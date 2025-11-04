@@ -15,7 +15,7 @@ March <- fread("2018_March_Taxi.csv", fill = TRUE,
          trip_distance = V5, RatecodeID = V6, store_and_fwd_flag = V7, PULocationID = V8, DOLocationID = V9, 
          payment_type = V10, fare_amount = V11, extra = V12, mta_tax = V13, tip_amount = V14, 
          tolls_amount = V15, improvement_surcharge = V16, total_amount = V17)
-Unable to gather the header when I skipped lines using fread, therefore, I used the rename statement in tidyverse to rename the columns. 
+# Unable to gather the header when I skipped lines using fread, therefore, I used the rename statement in tidyverse to rename the columns. 
 
 April <- fread("2018_April_Taxi.csv", fill = TRUE)
 May <- fread("2018_May_Taxi.csv", fill = TRUE)
@@ -411,6 +411,7 @@ save(September_TaxiCab, file = "September_Final.csv")
 save(October_TaxiCab, file = "October_Final.csv")
 save(November_TaxiCab, file = "November_Final.csv")
 save(December_TaxiCab, file = "December_Final.csv")
+
 
 
 
