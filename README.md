@@ -30,11 +30,11 @@ This repository includes modular R scripts for spatial analysis, data merging, a
 - Creating annotated multi-panel plots for borough-level and monthly trends
 
 Each script is commented for clarity and designed to be reusable across boroughs and crime types. Key functions include:
-- NYCCrimeData_Census Tract Zone Overlay(): Generates spatial overlays of taxi zones and census tracts
-- NYCCrimeData_Combined Visual(): Builds weekday-hour heatmaps for selected offenses
-- NYCCrimeData_Correlation Plots(): Generates scatter plots of crime counts vs. movement/population metrics for a given borough and month
-- NYCCrimeData_Combining Plots(): Computes zone-level net movement for each month and visualizes spatial trends using color-coded maps and ranked labels
-- NYCCrimeData_Data Processing(): Cleaning up the NYC yellow taxi-cab data
+- NYCCrimeData_Census_Tract_Zone_Overlay(): Generates spatial overlays of taxi zones and census tracts
+- NYCCrimeData_Combined_Visual(): Builds weekday-hour heatmaps for selected offenses
+- NYCCrimeData_Correlation_Plots(): Generates scatter plots of crime counts vs. movement/population metrics for a given borough and month
+- NYCCrimeData_Combining_Plots(): Computes zone-level net movement for each month and visualizes spatial trends using color-coded maps and ranked labels
+- NYCCrimeData_Data_Processing(): Cleaning up the NYC yellow taxi-cab data
 
 To run the analysis, ensure the required packages are installed and update file paths as needed. All visual outputs are saved as PDFs for easy sharing and review. 
 
