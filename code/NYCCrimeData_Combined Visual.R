@@ -4,6 +4,8 @@ library(tidyverse)
 library(hms)
 library(classInt)
 library(RColorBrewer)
+library(cowplot)
+library(glue)
 
 # Read in NYPD crime data
 Raw_CrimeData <- fread("NYPD_Complaint_Data_Historic.csv", fill = TRUE)
@@ -222,10 +224,6 @@ ggsave("Combined_Heatmaps_Borough_Harassment.pdf",
 
 # Create weekday-hour heatmap panels for monthly crime counts
 create_grand_larceny_monthly_heatmaps <- function(CrimeData, output_file = "Monthly_Harassment_Panels.pdf", save_pdf = TRUE) {
-  library(tidyverse)
-  library(RColorBrewer)
-  library(cowplot)
-  library(glue)
 
   # Define weekday order
   days <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
@@ -358,6 +356,7 @@ create_grand_larceny_monthly_heatmaps <- function(CrimeData, output_file = "Mont
 # Return function and save manually
 p <- create_grand_larceny_monthly_heatmaps(CrimeData, save_pdf = FALSE)
 ggsave("Harassment_Heatmaps_Manual.pdf", plot = p, width = 7, height = 9.5, units = "in", dpi = 300)
+
 
 
 
