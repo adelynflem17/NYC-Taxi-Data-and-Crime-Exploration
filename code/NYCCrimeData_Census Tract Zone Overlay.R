@@ -1,11 +1,13 @@
-## Census Tract Zone Overlay
-
-map_taxi_zones_by_borough <- function(zone_path, borough_path, tract_path, borough_name, clip = TRUE, label_areas = NULL) {
-  library(sf)
-  library(dplyr)
-  library(ggplot2)
-  library(ggrepel)
+## Load Required Libraries
+library(sf)
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
   
+
+## Census Tract Zone Overlay
+map_taxi_zones_by_borough <- function(zone_path, borough_path, tract_path, borough_name, clip = TRUE, label_areas = NULL) {
+
   # Read shapefiles and transform data to WGS84
   zones <- st_read(zone_path) %>% st_transform(crs = 4326)
   boroughs <- st_read(borough_path) %>% st_transform(crs = 4326)
@@ -148,4 +150,5 @@ Bronx_map <- map_taxi_zones_by_borough(
   label_areas = c("East Concourse/Concourse Village", "Mott Haven/Port Morris", "Spuyten Duyvil/Kingsbridge")
 )
 plot(Bronx_map)
+
 
