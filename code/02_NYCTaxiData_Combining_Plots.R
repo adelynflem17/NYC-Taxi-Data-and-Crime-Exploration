@@ -10,20 +10,20 @@ library(tidyverse)
 library(patchwork)
 
 # Load in final taxi-cab datasets for each month
-January_TaxiCab <- read.csv("January_Final.csv"))
-February_TaxiCab <- read.csv("February_Final.csv"))
-March_TaxiCab <- read.csv("March_Final.csv"))
+January_TaxiCab <- read.csv("January_Final.csv")
+February_TaxiCab <- read.csv("February_Final.csv")
+March_TaxiCab <- read.csv("March_Final.csv")
 March_TaxiCab$PU_TOD <- ifelse(March_TaxiCab$PU_Time <= "11:59:59", "AM", "PM")
 March_TaxiCab$DO_TOD <- ifelse(March_TaxiCab$DO_Time <= "11:59:59", "AM", "PM")
-April_TaxiCab <- read.csv("April_Final.csv"))
-May_TaxiCab <- read.csv("May_Final.csv"))
-June_TaxiCab <- read.csv("June_Final.csv"))
-July_TaxiCab <- read.csv("July_Final.csv"))
-August_TaxiCab <- read.csv("August_Final.csv"))
-September_TaxiCab <- read.csv("September_Final.csv"))
-October_TaxiCab <- read.csv("October_Final.csv"))
-November_TaxiCab <- read.csv("November_Final.csv"))
-December_TaxiCab <- read.csv("December_Final.csv"))
+April_TaxiCab <- read.csv("April_Final.csv")
+May_TaxiCab <- read.csv("May_Final.csv")
+June_TaxiCab <- read.csv("June_Final.csv")
+July_TaxiCab <- read.csv("July_Final.csv")
+August_TaxiCab <- read.csv("August_Final.csv")
+September_TaxiCab <- read.csv("September_Final.csv")
+October_TaxiCab <- read.csv("October_Final.csv")
+November_TaxiCab <- read.csv("November_Final.csv")
+December_TaxiCab <- read.csv("December_Final.csv")
 
 # Read shapefiles and transform to WGS84
 fname <- unzip(zipfile = "taxi_zones.zip")
@@ -332,6 +332,7 @@ final_plot <- combined_plot +
 
 # Save the final annotated plot to PDF
 ggsave("NetMovement_Combined_Brooklyn.pdf", final_plot, width = 11, height = 8.5, units = "in", dpi = 300)
+
 
 
 
