@@ -230,18 +230,18 @@ create_grand_larceny_monthly_heatmaps <- function(CrimeData, output_file = "Mont
 
   # Define the number of each weekday per month (used for averaging)
   weekday_averaging <- list(
-    "January"   = c(Monday=5, Tuesday=5, Wednesday=5, Thursday=4, Friday=4, Saturday=4, Sunday=4),
-    "February"  = c(Monday=4, Tuesday=4, Wednesday=4, Thursday=4, Friday=4, Saturday=4, Sunday=4),
-    "March"     = c(Monday=4, Tuesday=4, Wednesday=4, Thursday=5, Friday=5, Saturday=5, Sunday=4),
-    "April"     = c(Monday=5, Tuesday=4, Wednesday=4, Thursday=4, Friday=4, Saturday=4, Sunday=5),
-    "May"       = c(Monday=4, Tuesday=5, Wednesday=5, Thursday=5, Friday=4, Saturday=4, Sunday=4),
-    "June"      = c(Monday=4, Tuesday=4, Wednesday=4, Thursday=4, Friday=5, Saturday=5, Sunday=4),
-    "July"      = c(Monday=5, Tuesday=5, Wednesday=4, Thursday=4, Friday=4, Saturday=4, Sunday=5),
-    "August"    = c(Monday=4, Tuesday=4, Wednesday=5, Thursday=5, Friday=5, Saturday=4, Sunday=4),
-    "September" = c(Monday=4, Tuesday=4, Wednesday=4, Thursday=4, Friday=4, Saturday=5, Sunday=5),
-    "October"   = c(Monday=5, Tuesday=5, Wednesday=5, Thursday=4, Friday=4, Saturday=4, Sunday=4),
-    "November"  = c(Monday=4, Tuesday=4, Wednesday=4, Thursday=5, Friday=5, Saturday=4, Sunday=4),
-    "December"  = c(Monday=5, Tuesday=4, Wednesday=4, Thursday=4, Friday=4, Saturday=5, Sunday=5)
+    "January"   = c(Monday = 5, Tuesday = 5, Wednesday = 5, Thursday = 4, Friday = 4, Saturday = 4, Sunday = 4),
+    "February"  = c(Monday = 4, Tuesday = 4, Wednesday = 4, Thursday = 4, Friday = 4, Saturday = 4, Sunday = 4),
+    "March"     = c(Monday = 4, Tuesday = 4, Wednesday = 4, Thursday = 5, Friday = 5, Saturday = 5, Sunday = 4),
+    "April"     = c(Monday = 5, Tuesday = 4, Wednesday = 4, Thursday = 4, Friday = 4, Saturday = 4, Sunday = 5),
+    "May"       = c(Monday = 4, Tuesday = 5, Wednesday = 5, Thursday = 5, Friday = 4, Saturday = 4, Sunday = 4),
+    "June"      = c(Monday = 4, Tuesday = 4, Wednesday = 4, Thursday = 4, Friday = 5, Saturday = 5, Sunday = 4),
+    "July"      = c(Monday = 5, Tuesday = 5, Wednesday = 4, Thursday = 4, Friday = 4, Saturday = 4, Sunday = 5),
+    "August"    = c(Monday = 4, Tuesday = 4, Wednesday = 5, Thursday = 5, Friday = 5, Saturday = 4, Sunday = 4),
+    "September" = c(Monday = 4, Tuesday = 4, Wednesday = 4, Thursday = 4, Friday = 4, Saturday = 5, Sunday = 5),
+    "October"   = c(Monday = 5, Tuesday = 5, Wednesday = 5, Thursday = 4, Friday = 4, Saturday = 4, Sunday = 4),
+    "November"  = c(Monday = 4, Tuesday = 4, Wednesday = 4, Thursday = 5, Friday = 5, Saturday = 4, Sunday = 4),
+    "December"  = c(Monday = 5, Tuesday = 4, Wednesday = 4, Thursday = 4, Friday = 4, Saturday = 5, Sunday = 5)
   )
 
   # Filter for specific crime and extract hour/month
@@ -259,7 +259,7 @@ create_grand_larceny_monthly_heatmaps <- function(CrimeData, output_file = "Mont
 
   # Use month-specific weekday counts for averaging
     avg_days <- if (is.null(month)) {
-      c(Monday=53, Tuesday=52, Wednesday=52, Thursday=52, Friday=52, Saturday=52, Sunday=52)
+      c(Monday = 53, Tuesday = 52, Wednesday = 52, Thursday = 52, Friday = 52, Saturday = 52, Sunday = 52)
     } else {
       weekday_averaging[[month]]
     }
@@ -356,6 +356,7 @@ create_grand_larceny_monthly_heatmaps <- function(CrimeData, output_file = "Mont
 # Return function and save manually
 p <- create_grand_larceny_monthly_heatmaps(CrimeData, save_pdf = FALSE)
 ggsave("Harassment_Heatmaps_Manual.pdf", plot = p, width = 7, height = 9.5, units = "in", dpi = 300)
+
 
 
 
