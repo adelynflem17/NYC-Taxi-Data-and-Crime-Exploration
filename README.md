@@ -37,8 +37,8 @@ Each script is commented for clarity and designed to be reusable across boroughs
 - 05_NYCCrimeData_Correlation_Plots(): Generates scatter plots of crime counts vs. movement/population metrics for a given borough and month
 
 To streamline execution, a consolidated script (Combined File.R) is provided. This script sources all modular components in the correct order, allowing users to run the full analysis pipeline from cleaned data to final visualizations. 
-  Note: The raw data cleaning step (01_NYCTaxiData_Data_Processing.R) is excluded from the combined script for efficiency. Cleaned Excel files are available in the /data folder and used directly    in subsequent scripts.
-  Required Files: To run Combined File.R, ensure that all necessary Excel files are downloaded locally. These files are available either in the /data folder of this repository 
+- Note: The raw data cleaning step (01_NYCTaxiData_Data_Processing.R) is excluded from the combined script for efficiency. Cleaned Excel files are available in the /data folder and used directly    in subsequent scripts.
+- Required Files: To run Combined File.R, ensure that all necessary Excel files are downloaded locally. These files are available either in the /data folder of this repository 
   (for smaller datasets) or via Dropbox (for full taxi and crime records). Download these files prior to execution and update file paths in the script as needed.
 
 To run the analysis, ensure the required packages are installed and update file paths as needed. All visual outputs are saved as PDFs for easy sharing and review. 
