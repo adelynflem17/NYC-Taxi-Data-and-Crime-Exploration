@@ -115,7 +115,7 @@ legend("topright", legend = paste("r = ", sprintf("%.3f", cor(filtered_data$Popu
        bty = "n", cex = 0.8, text.col = "black")
 
 # Title slide with borough and month
-plot(1, type="n", xlab="", ylab="", xlim=c(0, 10), ylim=c(0, 10), axes = FALSE)
+plot(1, type = "n", xlab = "", ylab = "", xlim = c(0, 10), ylim = c(0, 10), axes = FALSE)
 text(5, 7, Borough, cex = 2)
 text(5, 3, paste(month_name, "2018"), cex = 2)
 
@@ -147,4 +147,5 @@ pdf_files <- c("Crime Correlation Plots_1_Staten Island.pdf", "Crime Correlation
                "Crime Correlation Plots_12_Staten Island.pdf")
 
 pdf_combine(input = pdf_files, output = "combined_StatenIsland_monthly_correlation_plots.pdf")
+
 
