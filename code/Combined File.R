@@ -24,20 +24,20 @@ setwd("C:/Users/Adelyn/Desktop/MS Report Data")
 
 
 # Read in the data sources ####
-January_TaxiCab <- read.csv("January_Final.csv")
-February_TaxiCab <- read.csv("February_Final.csv")
-March_TaxiCab <- read.csv("March_Final.csv")
+January_TaxiCab <- get(load("January_Final.csv"))
+February_TaxiCab <- get(load("February_Final.csv"))
+March_TaxiCab <- get(load("March_Final.csv"))
 March_TaxiCab$PU_TOD <- ifelse(March_TaxiCab$PU_Time <= "11:59:59", "AM", "PM")
 March_TaxiCab$DO_TOD <- ifelse(March_TaxiCab$DO_Time <= "11:59:59", "AM", "PM")
-April_TaxiCab <- read.csv("April_Final.csv")
-May_TaxiCab <- read.csv("May_Final.csv")
-June_TaxiCab <- read.csv("June_Final.csv")
-July_TaxiCab <- read.csv("July_Final.csv")
-August_TaxiCab <- read.csv("August_Final.csv")
-September_TaxiCab <- read.csv("September_Final.csv")
-October_TaxiCab <- read.csv("October_Final.csv")
-November_TaxiCab <- read.csv("November_Final.csv")
-December_TaxiCab <- read.csv("December_Final.csv")
+April_TaxiCab <- get(load("April_Final.csv"))
+May_TaxiCab <- get(load("May_Final.csv"))
+June_TaxiCab <- get(load("June_Final.csv"))
+July_TaxiCab <- get(load("July_Final.csv"))
+August_TaxiCab <- get(load("August_Final.csv"))
+September_TaxiCab <- get(load("September_Final.csv"))
+October_TaxiCab <- get(load("October_Final.csv"))
+November_TaxiCab <- get(load("November_Final.csv"))
+December_TaxiCab <- get(load("December_Final.csv"))
 Raw_CrimeData <- fread("NYPD_Complaint_Data_Historic.csv", fill = TRUE)
 Population <- read_excel("Population_data.xlsx")
 Movement <- read_excel("MovementData.xlsx")
@@ -1005,3 +1005,4 @@ pdf_combine(input = pdf_files, output = "combined_StatenIsland_monthly_correlati
 
 
   
+
